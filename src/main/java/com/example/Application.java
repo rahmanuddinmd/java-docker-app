@@ -1,12 +1,18 @@
-package com.example;
+package com.example.controller;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@SpringBootApplication
-public class Application {
+@RestController
+public class HomeController {
 
-    public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+    @GetMapping("/")
+    public String home() {
+        return "Application is running successfully 🚀";
+    }
+
+    @GetMapping("/hello")
+    public String hello() {
+        return "Hello from Spring Boot!";
     }
 }
